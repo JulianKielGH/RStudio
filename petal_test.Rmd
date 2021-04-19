@@ -1,0 +1,28 @@
+---
+title: "IrisTest"
+author: "Julian"
+date: "19 4 2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+```
+
+## R Markdown
+```{r}
+df <- iris
+plot <- df %>%
+  ggplot(aes(x = Petal.Length, y = Petal.Width, color = Species)) +
+  geom_point()
+
+ggsave(filename = "plot_petal.png", plot = plot)
+```
+### Adding another Markdown
+```{r}
+plot + labs(title = "This is a title")
+ggsave("plot_petal.png", plot = plot)
+```
+
+ 
